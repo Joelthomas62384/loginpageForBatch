@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img height="500" src="https://c8.alamy.com/comp/MR0G79/random-pictures-MR0G79.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img height="500" src="https://miro.medium.com/v2/da:true/resize:fit:1160/1*t_G1kZwKv0p2arQCgYG7IQ.gif" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img height="500" src="https://media.istockphoto.com/id/1295274245/photo/random-multicolored-spheres-computer-generated-abstract-form-of-large-and-small-balls-3d.jpg?s=612x612&w=0&k=20&c=q7NOl28YxIIOqKu6em50VlKrg6ISFyVww_nLOCr5W_A=" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<div class="container py-5" style="display:flex; ">
+
+    {% for card in cards %}
+
+    <div class="card" style="width: 18rem; margin-left:15px;">
+        <img src="{{card.img}}" height="200" class="card-img-top" alt="CardImage">
+        <div class="card-body">
+          <h5 class="card-title">{{card.title}}</h5>
+          <p class="card-text">{{card.description}}.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      {% endfor %}
+
+</div>
+
+{% endblock content %}
